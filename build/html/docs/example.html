@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用sphinx来进行线程 API接口的说明 &#8212; Python  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to Python’s documentation!" href="../index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Python’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Python  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">使用sphinx来进行线程 API接口的说明</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sphinx-api">
+<h1>使用sphinx来进行线程 API接口的说明<a class="headerlink" href="#sphinx-api" title="Permalink to this headline">¶</a></h1>
+<p>当前主要说明在linux系统编程中所遇到的API进行记录和测试说明</p>
+<p>linux中的线程共享整个进程的内存空间.
+线程是任务调度的最小单元也就是说一个进程最少还有一个线程</p>
+<div class="section" id="id1">
+<h2>1.线程的创建和退出<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>线程使用:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;pthread&gt;</span>
+
+<span class="n">编译链接输入</span><span class="p">:</span><span class="o">-</span><span class="n">pthread</span>
+</pre></div>
+</div>
+<p>创建线程:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">pthread_create</span><span class="p">(</span><span class="n">pthread_t</span> <span class="o">*</span><span class="n">thread</span><span class="p">,</span> <span class="n">const</span> <span class="n">pthread_attr_t</span> <span class="o">*</span><span class="n">attr</span><span class="p">,</span>
+                          <span class="n">void</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">start_routine</span><span class="p">)</span> <span class="p">(</span><span class="n">void</span> <span class="o">*</span><span class="p">),</span> <span class="n">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">);</span>
+
+<span class="n">参数说明</span>    <span class="n">pthread_t</span> <span class="n">类型的变量地址交由函数内部创建口给pthread_t</span> <span class="n">对象的内存空间赋值</span><span class="p">,</span><span class="n">attr属性输入配置</span>
+</pre></div>
+</div>
+<p>再是正常的文本段.</p>
+<p>Or automatically numbered:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Item 1</p></li>
+<li><p>Item 2</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>2.进程<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Words can have <em>emphasis in italics</em> or be <strong>bold</strong> and you can define
+code samples with back quotes, like when you talk about a command: <code class="docutils literal notranslate"><span class="pre">sudo</span></code>
+gives you super user powers!</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">使用sphinx来进行线程 API接口的说明</a><ul>
+<li><a class="reference internal" href="#id1">1.线程的创建和退出</a></li>
+<li><a class="reference internal" href="#id2">2.进程</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Welcome to Python’s documentation!</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/docs/example.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Python’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Python  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">使用sphinx来进行线程 API接口的说明</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, wangchun.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

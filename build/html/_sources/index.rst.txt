@@ -10,7 +10,7 @@ Welcome to Python's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   example
+   docs/example
 
 
 
